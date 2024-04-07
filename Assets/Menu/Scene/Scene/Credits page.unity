@@ -12255,7 +12255,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -6, y: 86}
+  m_AnchoredPosition: {x: -6, y: 78}
   m_SizeDelta: {x: 481.6856, y: 199.2753}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1784952737
@@ -12281,7 +12281,10 @@ MonoBehaviour:
   m_text: 'Jihang Liang
 
 
-    Hao Liang'
+    Hao Liang
+
+
+    Bohao YAN'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
