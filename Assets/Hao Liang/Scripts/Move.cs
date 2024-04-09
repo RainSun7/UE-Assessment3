@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Move : MonoBehaviour
 {
+
     public float moveSpeed = 5f;
 
     void Update()
@@ -20,5 +22,23 @@ public class Move : MonoBehaviour
 
         transform.Translate(moveDirection * moveSpeed * Time.deltaTime, Space.Self);
     }
+
+    void OnTriggerEnter(Collider other)
+        {
+     // Check if the object the player collided with has the "PickUp" tag.
+     if (other.gameObject.CompareTag("PickUp"))
+            {
+     // Deactivate the collided object (making it disappear).
+                other.gameObject.SetActive(false);
+
+            }
+
+           
+        }
+
+       
+
+
+
 }
 
