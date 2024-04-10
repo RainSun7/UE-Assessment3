@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
  private int count;
 
  public float moveSpeed = 5f;
+ public AudioSource AduioSource;
 
 
 
@@ -63,6 +64,7 @@ void Update()
  if (other.gameObject.CompareTag("PickUp"))
         {
  // Deactivate the collided object (making it disappear).
+            AduioSource.Play();
             other.gameObject.SetActive(false);
 
  // Increment the count of "PickUp" objects collected.
