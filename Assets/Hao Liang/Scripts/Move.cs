@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using TMPro;
 
 public class Move : MonoBehaviour
 {
 
+    private Rigidbody rb;
+    private int count;
     public float moveSpeed = 5f;
 
     void Update()
@@ -23,6 +26,21 @@ public class Move : MonoBehaviour
         transform.Translate(moveDirection * moveSpeed * Time.deltaTime, Space.Self);
     }
 
+    public TextMeshProUGUI countText;
+
+    public GameObject winTextObject;
+
+    void Start()
+       {
+        rb = GetComponent<Rigidbody>();
+
+        count = 0;
+
+        SetCountText();
+
+        winTextObject.SetActive(false);
+    }
+
     void OnTriggerEnter(Collider other)
         {
      // Check if the object the player collided with has the "PickUp" tag.
@@ -31,14 +49,22 @@ public class Move : MonoBehaviour
      // Deactivate the collided object (making it disappear).
                 other.gameObject.SetActive(false);
 
-            }
+                count = count + 1;
 
-           
+                SetCountText();
+
+            }    
         }
+        void SetCountText()
+    {
+        countText.text = "Count: " + count.ToString();
 
-       
-
-
-
+ if (count >= 5)
+        {
+            winTextObject.SetActive(true);
+        }
+    }
 }
+
+
 
